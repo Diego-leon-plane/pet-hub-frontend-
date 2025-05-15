@@ -1,0 +1,77 @@
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .register-form .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #555;
+  }
+  
+  .register-form input,
+  .register-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .register-form input:focus,
+  .register-form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .error small {
+    color: red;
+    font-size: 0.85rem;
+  }
+  
+  .have-account {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .have-account a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .have-account a:hover {
+    text-decoration: underline;
+  }
+  

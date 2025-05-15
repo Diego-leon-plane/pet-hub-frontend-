@@ -1,0 +1,44 @@
+<div class="admin-citas-container">
+  <h2 class="admin-citas-title">Gestión de Citas (Admin)</h2>
+
+  <table class="admin-citas-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Mascota</th>
+        <th>Usuario</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas">
+        <td>{{ cita.id }}</td>
+        <td>{{ cita.fecha }}</td>
+        <td>{{ cita.descripcion }}</td>
+        <td>{{ cita.nombre_mascota }}</td>
+        <td>{{ cita.nombre_usuario || 'N/A' }}</td>
+        <td class="admin-citas-actions">
+          <button (click)="editarCita(cita)">Editar</button>
+          <button (click)="eliminarCita(cita.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="citaSeleccionada" class="admin-citas-form">
+    <h3>Editar Cita</h3>
+    <label>Fecha:
+      <input [(ngModel)]="citaSeleccionada.fecha" type="date" />
+    </label>
+    <label>Descripción:
+      <input [(ngModel)]="citaSeleccionada.descripcion" type="text" />
+    </label>
+    <label>Mascota ID:
+      <input [(ngModel)]="citaSeleccionada.mascota_id" type="number" />
+    </label>
+    <button (click)="guardarCambios()">Guardar</button>
+    <button (click)="cancelarEdicion()">Cancelar</button>
+  </div>
+</div>

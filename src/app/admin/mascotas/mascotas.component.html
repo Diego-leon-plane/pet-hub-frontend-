@@ -1,0 +1,22 @@
+<div class="admin-mascotas-container">
+  <h2 class="admin-mascotas-title">Todas las mascotas registradas</h2>
+
+  <table class="admin-mascotas-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Dueño</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mascota of mascotas">
+        <td>{{ mascota.nombre }}</td>
+        <td>{{ mascota.tipo }}</td>
+        <td>{{ mascota.nombrePropietario || 'N/A' }}</td>
+        <td>{{ mascota.emailPropietario || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="user-mascotas-container">
+  <h2 class="user-mascotas-title">Listado de Mascotas</h2>
+
+  <ul *ngIf="mascotas.length > 0" class="user-mascotas-list">
+    <li *ngFor="let mascota of mascotas" class="user-mascotas-item">
+      <div *ngIf="mascotaEditando === mascota.id; else mostrarMascota" class="user-mascotas-form-edit">
+        <input type="text" [(ngModel)]="nombreEditado" placeholder="Nombre" class="user-mascotas-input" />
+        <input type="text" [(ngModel)]="tipoEditado" placeholder="Tipo" class="user-mascotas-input" />
+        <button (click)="guardarEdicion()" class="user-mascotas-button">Guardar</button>
+        <button (click)="cancelarEdicion()" class="user-mascotas-button cancel">Cancelar</button>
+      </div>
+
+      <ng-template #mostrarMascota>
+        <div class="user-mascotas-display">
+          <strong>{{ mascota.nombre }}</strong> ({{ mascota.tipo }})
+          <div class="user-mascotas-actions" *ngIf="rol === 'USER'">
+            <button (click)="eliminarMascota(mascota.id)" class="user-mascotas-button danger">Eliminar</button>
+            <button (click)="editarMascota(mascota)" class="user-mascotas-button">Editar</button>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+
+  <p *ngIf="mascotas.length === 0" class="user-mascotas-empty">No hay mascotas registradas.</p>
+
+  <h3 class="user-mascotas-subtitle">Registrar nueva mascota</h3>
+  <form (ngSubmit)="registrarMascota()" #formMascota="ngForm" class="user-mascotas-form">
+    <input type="text" name="nombre" [(ngModel)]="nuevaMascota.nombre" placeholder="Nombre" required class="user-mascotas-input">
+    <input type="text" name="tipo" [(ngModel)]="nuevaMascota.tipo" placeholder="Tipo (perro, gato...)" required class="user-mascotas-input">
+    <button type="submit" [disabled]="formMascota.invalid" class="user-mascotas-button">Guardar</button>
+  </form>
+</div>

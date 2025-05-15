@@ -1,0 +1,29 @@
+<div class="user-citas-container">
+
+  <h2 class="user-citas-title">Mis Citas</h2>
+  <ul class="user-citas-list">
+    <li *ngFor="let cita of citas" class="user-citas-item">
+      <strong>Fecha:</strong> {{ cita.fecha }} |
+      <strong>Descripción:</strong> {{ cita.descripcion }} |
+      <strong>Mascota:</strong> {{ obtenerNombreMascota(cita.mascota_id) }}
+    </li>
+  </ul>
+
+  <h2 class="user-citas-title">Registrar Nueva Cita</h2>
+
+  <form (ngSubmit)="registrarCita()" class="user-citas-form">
+    <label class="user-citas-label">Mascota:</label>
+    <select [(ngModel)]="nuevaCita.mascota_id" name="mascota" required class="user-citas-select">
+      <option *ngFor="let mascota of mascotas" [value]="mascota.id">{{ mascota.nombre }}</option>
+    </select>
+
+    <label class="user-citas-label">Fecha:</label>
+    <input type="date" [(ngModel)]="nuevaCita.fecha" name="fecha" required class="user-citas-input">
+
+    <label class="user-citas-label">Descripción:</label>
+    <input type="text" [(ngModel)]="nuevaCita.descripcion" name="descripcion" required class="user-citas-input">
+
+    <button type="submit" class="user-citas-button">Registrar</button>
+  </form>
+
+</div>

@@ -1,0 +1,105 @@
+.admin-citas-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .admin-citas-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .admin-citas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  .admin-citas-table th,
+  .admin-citas-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .admin-citas-table th {
+    background-color: #f2f2f2;
+    color: #444;
+  }
+  
+  .admin-citas-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .admin-citas-actions button {
+    margin-right: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .admin-citas-actions button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .admin-citas-actions button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .admin-citas-actions button:hover {
+    opacity: 0.85;
+  }
+  
+  .admin-citas-form {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .admin-citas-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #222;
+  }
+  
+  .admin-citas-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .admin-citas-form input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .admin-citas-form button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .admin-citas-form button:first-of-type {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .admin-citas-form button:last-of-type {
+    background-color: #6c757d;
+    color: white;
+  }
+  

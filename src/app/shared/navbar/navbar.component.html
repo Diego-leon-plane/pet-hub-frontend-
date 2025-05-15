@@ -1,0 +1,15 @@
+<nav class="nav-container">
+  <h1 class="nav-title">Bienvenido a PetHub 🐶</h1>
+
+  <ul *ngIf="rol === 'USER'" class="nav-list">
+    <li class="nav-item"><a routerLink="/user/mascotas" class="nav-link">Mascotas</a></li>
+    <li class="nav-item"><a routerLink="/user/citas" class="nav-link">Citas</a></li>
+  </ul>
+
+  <ul *ngIf="rol === 'ADMIN'" class="nav-list">
+    <li class="nav-item"><a routerLink="/admin/mascotas" class="nav-link">Mascotas</a></li>
+    <li class="nav-item"><a routerLink="/admin/citas" class="nav-link">Citas</a></li>
+  </ul>
+
+  <button (click)="logout()" class="nav-logout">Cerrar sesión</button>
+</nav>
