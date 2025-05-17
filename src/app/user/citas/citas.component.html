@@ -9,6 +9,8 @@
     </li>
   </ul>
 
+  <p *ngIf="citas.length === 0" class="user-citas-empty">No hay citas registradas.</p>
+
   <h2 class="user-citas-title">Registrar Nueva Cita</h2>
 
   <form (ngSubmit)="registrarCita()" class="user-citas-form">

@@ -3,6 +3,12 @@
     margin: 0 auto;
     padding: 20px;
   }
+
+  .user-citas-empty {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+  }
   
   .user-citas-title {
     text-align: center;
