@@ -10,6 +10,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     
     if(isBrowser()) {
         const token = localStorage.getItem('token')
+        console.log('INTERCEPTOR TOKEN => ', token)
 
         if(token) {
             const authReq = req.clone({

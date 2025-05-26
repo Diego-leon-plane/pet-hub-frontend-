@@ -32,7 +32,10 @@ export class CitasComponent implements OnInit {
   }
 
   editarCita(cita: any):void {
-    this.citaSeleccionada = { ...cita }
+    const fechaOriginal = new Date(cita.fecha)
+    const fechaFormateada = fechaOriginal.toISOString().split('T')[0]
+
+    this.citaSeleccionada = { ...cita, fecha: fechaFormateada } 
   }
 
   guardarCambios(): void {
@@ -46,7 +49,7 @@ export class CitasComponent implements OnInit {
       fecha: fechaFormateada
     }
 
-    this.citasService.actualizarCita(this.citaSeleccionada.id, this.citaSeleccionada).subscribe(() => {
+    this.citasService.actualizarCita(this.citaSeleccionada.id, datosEditados).subscribe(() => {
       this.obtenerCitas()
       this.citaSeleccionada = null
     }, error => {
